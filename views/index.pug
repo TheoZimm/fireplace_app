@@ -1,0 +1,24 @@
+extends layout
+
+block menu
+    div(class="row")
+        form(class="col s12")
+            div(class="row")
+                div(class="input-field col s12" id="menu")
+                    textarea(id="textarea1" class="materialize-textarea")
+                    label(for="textarea1")
+block feed
+    ul(class="collection")
+        li(class="collection-item avatar" id="reddit-item")
+            img(src="../images/reddit.png" alt="" class="circle")
+            span(class="title") TITRE
+            p First Line
+            a(href="#" class="secondary-content")
+                i.material-icons trending_flat
+
+        li(class="collection-item avatar")
+            img(src="../images/twit.png" alt="" class="circle")
+            span(class="title") TITRE
+            p First Line
+            a(href="#" class="secondary-content")
+                i.material-icons trending_flat

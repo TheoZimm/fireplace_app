@@ -1,0 +1,52 @@
+// OVERWRITE DEFAULT
+
+$secondary-color:  #f5f5f5;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+
+$link-color: color("light-blue", "darken-1") !default;
+
+// COLOR VARS
+
+$light-grey:#bdbdbd;
+$holy-grey:#f5f5f5;
+$content_bg:rgba(15,15,15,0.32);
+
+body {
+  background:url(../images/bg.jpg);
+}
+#main_content{
+  margin-top:2%;
+
+  & #menu{
+    width:100%;
+    border:$light-grey 10px;
+    height:auto;
+    padding-bottom:0;
+    COLOR:$light-grey;
+    background:$content_bg;
+  }
+
+  & #search{
+    margin-top:-0.5%;
+  }
+}
+.secondary-content{
+  color:$light-grey;
+}
+.collection{
+
+  & .collection-item{
+    background:$content_bg;
+    border-color: $light-grey;
+    color:$holy-grey;
+    &.avatar{
+      min-height:10%;
+    }
+
+  }
+}
+
+textarea.materialize-textarea{
+  padding:0;
+}

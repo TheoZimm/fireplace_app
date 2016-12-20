@@ -1,0 +1,38 @@
+body {
+  background: url(../images/bg.jpg);
+}
+
+#main_content {
+  margin-top: 2%;
+}
+
+#main_content #menu {
+  width: 100%;
+  border: #bdbdbd 10px;
+  height: auto;
+  padding-bottom: 0;
+  COLOR: #bdbdbd;
+  background: rgba(15, 15, 15, 0.32);
+}
+
+#main_content #search {
+  margin-top: -0.5%;
+}
+
+.secondary-content {
+  color: #bdbdbd;
+}
+
+.collection .collection-item {
+  background: rgba(15, 15, 15, 0.32);
+  border-color: #bdbdbd;
+  color: #f5f5f5;
+}
+
+.collection .collection-item.avatar {
+  min-height: 10%;
+}
+
+textarea.materialize-textarea {
+  padding: 0;
+}
