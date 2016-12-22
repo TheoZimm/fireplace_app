@@ -10,10 +10,7 @@
 -  Aller sur https://www.reddit.com/prefs/apps puis créer une nouvelle application
 - Dans l'objet snoowrap qui se trouve dans le fichier app.js à la racine du projet, insérer vos crédentials reddit
 - Pour la génération d'un refreshToken et des différents scopes dépendant à chaque refreshToken (voir ma doc sur reddit API) ouvrer un bash à la racine du projet et rentrer 
-    
-    ```npm install -g reddit-oauth-helper```
-    puis
-     ```reddit-oauth-helper```
+    ```npm install -g reddit-oauth-helper``` puis ```reddit-oauth-helper```
 - Suivre la marche à suivre ensuite une nouvelle page reddit s'ouvrire depuis votre browser (ne pas oublier la modification du redirect_uri et la definition correcte du scope) 
 - Cliquer sur "autoriser" - récuperer le "refresh_token" et l'insérer dans le fichier app.js
 
