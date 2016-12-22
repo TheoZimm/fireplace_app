@@ -12,10 +12,10 @@ var app = express();
 /* *Connexion avec Reddit API ***************************** */
 const snoowrap = require('snoowrap');
 const r = new snoowrap({
-    userAgent: 'testing',
-    clientId: 'ToYqw8wJljlhNw',
-    clientSecret: 'QeVE0pf8qmjZml3No92Y1ZOafCM',
-    refreshToken: '22315002-Y7qONUZDQyJEiiBz9Cxz8eQhMHg'
+    userAgent: 'XXX',
+    clientId: 'XXX',
+    clientSecret: 'XXX',
+    refreshToken: 'XXX-XXX'
 });
 r.getUser('Muporgu').fetch().then(userInfo => {
     console.log('Reddit infos about the user Muporgu');
@@ -34,10 +34,10 @@ r.getUser('Muporgu').fetch().then(userInfo => {
 var Twitter = require('twitter');
 
 var twit = new Twitter({
-    consumer_key: 'jDb4TBs5YDP1ajHrZkHFh8UkA',
-    consumer_secret: 'dCE3kPUgj3tkSVCXd8vVzcx5QFcfYsEbwSKaLblug1lAUMU8VR',
-    access_token_key: '2698722140-hRjY7ogTrYl3Xvf2jE0fOx56esRu4hNjGmoRwy7',
-    access_token_secret: '8kjt0B1rVnx0yWjlFAZ7qtjvcLtcZ6aBN7gGpuMZ9Lv23'
+    consumer_key: 'XXX',
+    consumer_secret: 'XXX',
+    access_token_key: 'XXX-XXX',
+    access_token_secret: 'XXX'
 });
 
 // Get last tweet that contains "Eleague"
