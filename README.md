@@ -19,7 +19,7 @@
 - Dans l'objet twitter qui se trouve dans le fichier app.js insérer vos crédentials
 - à la racine du projet lancer un bash ```npm start```
 
-Les requêtes de test s'affichent dans votre bash juste après avoir lancer npm start
+Les requêtes de test s'affichent dans votre bash juste après avoir lancé npm start
 
 ## Technologies utilisées
     le projet est constitué de plusieurs couches -
