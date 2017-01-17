@@ -4,10 +4,10 @@ block menu
     div(class="row")
             div(class="row")
                 div(class="input-field col s12" id="menu")
-                    form(method='get' action='/research')
+                    form(method='get' action='/search')
                         label
-                        input(id="research" name="research" type="text" class="materialize-textarea")
-                        input(class="btn btn-primary sub" type='submit' name="submit" value="submit your request")
+                        input(id="search" name="q" type="text" value=search class="materialize-textarea")
+                        button(class="btn btn-primary sub" type='submit')
     div(class="hint")
       p Type your search keyword up here !
 

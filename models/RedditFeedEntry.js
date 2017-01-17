@@ -1,5 +1,4 @@
-/* Class Reddit FeedEntry*/
-module.exports = class RFeedEntry{
+module.exports = class RedditFeedEntry{
 
     constructor(entryTitle,entryUrl,entryAuthor){
         this.entryTitle = entryTitle;
@@ -8,4 +7,3 @@ module.exports = class RFeedEntry{
     }
 }
 
-/* END class reddit FeedEntry */

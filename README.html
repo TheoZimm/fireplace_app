@@ -5,18 +5,22 @@ npm version 4.0.3
 Un compte reddit
 Un compte twitter
 </code></pre><h2 id="marche-suivre">Marche à suivre</h2>
-<p>1 - Copier le dossier Fireplace_app en local et faites npm install dans un bash à la racine de celui-ci afin d&#39;installer toutes les dépendences présentes dans le fichier package.json
-2 - Aller sur <a href="https://www.reddit.com/prefs/apps">https://www.reddit.com/prefs/apps</a> puis créer une nouvelle application
-3 - Dans l&#39;objet snoowrap qui se trouve dans le fichier app.js à la racine du projet, insérer vos crédentials reddit
-4 - Pour la génération d&#39;un refreshToken et des différents scopes dépendant à chaque refreshToken (voir ma doc sur reddit API) ouvrer un bash à la racine du projet et rentrer 
-    ´´´npm install -g reddit-oauth-helper ´´´ puis ´´´reddit-oauth-helper´´´
-5 - Suivre la marche à suivre ensuite une nouvelle page reddit s&#39;ouvrire depuis votre browser (ne pas oublier la modification du redirect_uri et la definition correcte du scope) 
-6 - Cliquer sur &quot;autoriser&quot; - récuperer le &quot;refresh_token&quot; et l&#39;insérer dans le fichier app.js</p>
-<p>7 - Aller sur <a href="https://apps.twitter.com/">https://apps.twitter.com/</a> puis créer une nouvelle application
-8 - Dans la rubrique &quot;Keys and Access Tokens&quot; générer un &quot;access token&quot; 
-9 - Dans l&#39;objet twitter qui se trouve dans le fichier app.js insérer vos crédentials
-10 - à la racine du projet lancer un bash ´´´set DEBUG=fireplace_app:* &amp; npm start´´´</p>
-<p>Les requêtes de test s&#39;affichent dans votre bash juste après avoir lancer npm start</p>
+<ul>
+<li>Copier le dossier Fireplace_app en local et faites npm install dans un bash à la racine de celui-ci afin d&#39;installer toutes les dépendences présentes dans le fichier package.json</li>
+<li>Aller sur <a href="https://www.reddit.com/prefs/apps">https://www.reddit.com/prefs/apps</a> puis créer une nouvelle application</li>
+<li>Dans l&#39;objet snoowrap qui se trouve dans le fichier app.js à la racine du projet, insérer vos crédentials reddit</li>
+<li>Pour la génération d&#39;un refreshToken et des différents scopes dépendant à chaque refreshToken (voir ma doc sur reddit API) ouvrer un bash à la racine du projet et rentrer 
+  <code>npm install -g reddit-oauth-helper</code> puis <code>reddit-oauth-helper</code></li>
+<li>Suivre la marche à suivre ensuite une nouvelle page reddit s&#39;ouvrire depuis votre browser (ne pas oublier la modification du redirect_uri et la definition correcte du scope) </li>
+<li><p>Cliquer sur &quot;autoriser&quot; - récuperer le &quot;refresh_token&quot; et l&#39;insérer dans le fichier app.js</p>
+</li>
+<li><p>Aller sur <a href="https://apps.twitter.com/">https://apps.twitter.com/</a> puis créer une nouvelle application</p>
+</li>
+<li>Dans la rubrique &quot;Keys and Access Tokens&quot; générer un &quot;access token&quot; </li>
+<li>Dans l&#39;objet twitter qui se trouve dans le fichier app.js insérer vos crédentials</li>
+<li>à la racine du projet lancer un bash <code>npm start</code></li>
+</ul>
+<p>Les requêtes de test s&#39;affichent dans votre bash juste après avoir lancé npm start</p>
 <h2 id="technologies-utilis-es">Technologies utilisées</h2>
 <pre><code>le projet est constitué de plusieurs couches -
     NodeJS pour la base 

@@ -1,5 +1,4 @@
-/* Class Twitter FeedEntry*/
-module.exports = class TFeedEntry{
+module.exports = class TwitterFeedEntry{
 
     constructor(entryTitle,entryUrl,entryAuthor){
         this.entryTitle = entryTitle;
@@ -8,4 +7,3 @@ module.exports = class TFeedEntry{
     }
 }
 
-/* END class Twitter FeedEntry */
