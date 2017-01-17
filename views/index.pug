@@ -28,7 +28,7 @@ block feed
                 img(src="../images/twit.png" alt="" class="circle")
                 span(class="title") #{feed.entryTitle}
                 p Submitted by #{feed.entryAuthor}
-                a(href=feed.entryUrl class="secondary-content")
+                a(href="https://twitter.com/statuses/" + feed.entryUrl class="secondary-content")
                     i.material-icons trending_flat
                 
 block creds

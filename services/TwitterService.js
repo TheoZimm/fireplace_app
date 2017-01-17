@@ -32,7 +32,7 @@ class TwitterService {
                 let tweetsArray = [];
                 for(let key in tweets.statuses) {
                     let tweet = tweets.statuses[key];
-                    tweetsArray.push(new TFeedEntry(tweet.text, tweet.url, tweet.user.name));
+                    tweetsArray.push(new TFeedEntry(tweet.text, tweet.id_str, tweet.user.name));
                 }
                 resolve(tweetsArray);
             });
