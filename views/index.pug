@@ -2,23 +2,39 @@ extends layout
 
 block menu
     div(class="row")
-        form(class="col s12")
             div(class="row")
                 div(class="input-field col s12" id="menu")
-                    textarea(id="textarea1" class="materialize-textarea")
-                    label(for="textarea1")
-block feed
-    ul(class="collection")
-        li(class="collection-item avatar" id="reddit-item")
-            img(src="../images/reddit.png" alt="" class="circle")
-            span(class="title") TITRE
-            p First Line
-            a(href="#" class="secondary-content")
-                i.material-icons trending_flat
+                    form(method='get' action='/research')
+                        label
+                        input(id="research" name="research" type="text" class="materialize-textarea")
+                        input(class="btn btn-primary sub" type='submit' name="submit" value="submit your request")
+    div(class="hint")
+      p Type your search keyword up here !
 
-        li(class="collection-item avatar")
-            img(src="../images/twit.png" alt="" class="circle")
-            span(class="title") TITRE
-            p First Line
-            a(href="#" class="secondary-content")
-                i.material-icons trending_flat
+block feed
+
+    ul(class="collection")
+        each feed in rFeed
+            li(class="collection-item avatar" id="reddit-item")
+                img(src="../images/reddit.png" alt="" class="circle")
+                span(class="title") #{feed.entryTitle}
+                p Submitted by : #{feed.entryAuthor}
+                a(href=feed.entryUrl class="secondary-content")
+                    i.material-icons trending_flat
+
+        each feed in tFeed
+            li(class="collection-item avatar")
+                img(src="../images/twit.png" alt="" class="circle")
+                span(class="title") #{feed.entryTitle}
+                p Submitted by #{feed.entryAuthor}
+                a(href=feed.entryUrl class="secondary-content")
+                    i.material-icons trending_flat
+                
+block creds
+  div(class="row")
+    div(class="box")
+      h4 Welcome
+      p Reddit nickname
+      p(class="nick") #{rUsername}
+      p Twitter nickname
+      p(class="nick") #{tUsername}
