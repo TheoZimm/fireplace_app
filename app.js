@@ -25,10 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
     res.redirect('/search?q=csgo');
-    // res.render(
-    //     'index',
-    //     {title:'FirePlace', rUsername:rUsername, tUsername:tUsername, rFeed:rFeed, tFeed:tFeed}
-    // )
 });
 
 app.get('/search', function (req, res) {
@@ -45,11 +41,19 @@ app.get('/search', function (req, res) {
         // then assignate k -> v
     ]).then(([tUsername, rUsername, tFeed, rFeed]) => {
         res.render('index',{ tUsername, rUsername, tFeed, rFeed, search });
+        // Catch error 500 and display the error page
     }).catch(err => {
-        res.status(500).json({
-            code: 500,
-            message: err.message,
-        });
+        if (err[0].code == 89){
+            err.status = 89;
+            res.locals.message = err[0].message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+            res.render('error');
+        } else {
+        err.status = 500;
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err : {};
+        res.render('error');
+        }
     });
 });
 
@@ -57,17 +61,30 @@ app.get('/search', function (req, res) {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  const err = new Error('Not Found');
+  const err = new Error("Votre requête n'existe pas ! ");
   err.status = 404;
-  next(err);
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.status(err.status || 404);
+    res.render('error');
+
 });
+
+// catch 500 and forward to error handler
+app.use(function(req, res, next) {
+    const err = new Error("Erreur interne");
+    err.status = 500;
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.render('error');
+});
+
 
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');

@@ -1,7 +1,7 @@
 const Twitter = require('twitter');
 const TFeedEntry = require('../models/TwitterFeedEntry');
 
-
+/* Initialize the credentials via the wrapper */
 const twitterApi = new Twitter({
     consumer_key: 'jDb4TBs5YDP1ajHrZkHFh8UkA',
     consumer_secret: 'dCE3kPUgj3tkSVCXd8vVzcx5QFcfYsEbwSKaLblug1lAUMU8VR',
@@ -12,6 +12,7 @@ const twitterApi = new Twitter({
 
 class TwitterService {
 
+    /* First request - get my username*/
     me() {
         return new Promise(function(resolve, reject) {
            twitterApi.get('account/verify_credentials', function(error,user,response){
@@ -21,8 +22,9 @@ class TwitterService {
         });
     }
 
-    get(q, count=5) {
-        // TODO: IMPROVE CODE
+    /* Second request - get 5 post from the query  */
+    get(q, count=10) {
+
         return new Promise(function(resolve, reject) {
             twitterApi.get('search/tweets', {q, count}, function(error, tweets, response) {
                 if(error) {

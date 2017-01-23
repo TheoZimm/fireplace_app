@@ -1,6 +1,13 @@
 extends layout
 
 block feed
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+
+  if (error.status == 500)
+      h1 Internal Error
+      h2= error.status
+      a(class="btn btn-primary sub" href="/") refresh
+
+  if (error.status == 404)
+      h1 your request doesn't exist
+      h2= error.status
+      a(class="btn btn-primary sub" href="/") refresh

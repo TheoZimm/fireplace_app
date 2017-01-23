@@ -1,3 +1,5 @@
+<h1 id="description-du-projet">Description du projet</h1>
+<h1 id="-">#</h1>
 <h1 id="installation-du-projet">Installation du projet</h1>
 <h2 id="pr-requis">Prérequis</h2>
 <pre><code>NodeJS version 6.9.1
@@ -8,24 +10,29 @@ Un compte twitter
 <ul>
 <li>Copier le dossier Fireplace_app en local et faites npm install dans un bash à la racine de celui-ci afin d&#39;installer toutes les dépendences présentes dans le fichier package.json</li>
 <li>Aller sur <a href="https://www.reddit.com/prefs/apps">https://www.reddit.com/prefs/apps</a> puis créer une nouvelle application</li>
-<li>Dans l&#39;objet snoowrap qui se trouve dans le fichier app.js à la racine du projet, insérer vos crédentials reddit</li>
+<li>Dans l&#39;objet redditApi qui se trouve dans le fichier /services/RedditService.js insérer vos crédentials reddit</li>
 <li>Pour la génération d&#39;un refreshToken et des différents scopes dépendant à chaque refreshToken (voir ma doc sur reddit API) ouvrer un bash à la racine du projet et rentrer 
   <code>npm install -g reddit-oauth-helper</code> puis <code>reddit-oauth-helper</code></li>
-<li>Suivre la marche à suivre ensuite une nouvelle page reddit s&#39;ouvrire depuis votre browser (ne pas oublier la modification du redirect_uri et la definition correcte du scope) </li>
-<li><p>Cliquer sur &quot;autoriser&quot; - récuperer le &quot;refresh_token&quot; et l&#39;insérer dans le fichier app.js</p>
-</li>
-<li><p>Aller sur <a href="https://apps.twitter.com/">https://apps.twitter.com/</a> puis créer une nouvelle application</p>
-</li>
+<li>Suivre la marche à suivre ensuite une nouvelle page reddit s&#39;ouvrira depuis votre browser  </li>
+<li>Cliquer sur &quot;autoriser&quot; - récuperer le &quot;refresh_token&quot; et l&#39;insérer dans le fichier app.js</li>
+<li>Aller sur <a href="https://apps.twitter.com/">https://apps.twitter.com/</a> puis créer une nouvelle application</li>
 <li>Dans la rubrique &quot;Keys and Access Tokens&quot; générer un &quot;access token&quot; </li>
-<li>Dans l&#39;objet twitter qui se trouve dans le fichier app.js insérer vos crédentials</li>
+<li>Dans l&#39;objet twitterApi qui se trouve dans le fichier /services/TwitterService.js insérer vos crédentials twitter</li>
 <li>à la racine du projet lancer un bash <code>npm start</code></li>
 </ul>
-<p>Les requêtes de test s&#39;affichent dans votre bash juste après avoir lancé npm start</p>
+<p>Le projet se lance par défault à l&#39;adresse localhost:3000</p>
 <h2 id="technologies-utilis-es">Technologies utilisées</h2>
-<pre><code>le projet est constitué de plusieurs couches -
-    NodeJS pour la base 
-        ExpressJS qui est un framework minimaliste pour NodeJS
-        PUGjs qui est un template engine pour NodeJS
-    un Wrapper &quot;snoowrap&quot; pour l&#39;api de reddit
-    un Wrapper &quot;twitter&quot; pour l&#39;api de twitter
-</code></pre>
+<p>le projet est constitué de plusieurs couches :</p>
+<ul>
+<li>NodeJS pour la base </li>
+<li>ExpressJS qui est un framework minimaliste pour NodeJS</li>
+<li>PUGjs qui est un template engine pour NodeJS</li>
+<li>Un Wrapper &quot;snoowrap&quot; pour l&#39;api de reddit</li>
+<li>Un Wrapper &quot;twitter&quot; pour l&#39;api de twitter</li>
+</ul>
+<h1 id="utilisation-du-projet">Utilisation du projet</h1>
+<ul>
+<li>Une fois vos credentials setup vous pouvez lancer l&#39;application sur localhost:3000</li>
+<li>Dans le bord haut droite de votre écran vous trouverez votre pseudo reddit et twitter reliés à vos credentials</li>
+<li>Vous pouvez rechercher n&#39;importequelle mots clés et l&#39;application va ressortir les 5 articles les plus récent concernant celui-ci.</li>
+</ul>

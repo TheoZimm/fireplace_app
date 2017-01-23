@@ -7,6 +7,10 @@ block menu
                     form(method='get' action='/search')
                         label
                         input(id="search" name="q" type="text" value=search class="materialize-textarea")
+                        select(name="c" class="browser-default countselect")
+                            option(value="1") 1
+                            option(value="5") 5
+                            option(value="10") 10
                         button(class="btn btn-primary sub" type='submit') #search
 
     div(class="hint")
@@ -15,21 +19,27 @@ block menu
 block feed
 
     ul(class="collection")
-        each feed in rFeed
-            li(class="collection-item avatar" id="reddit-item")
-                img(src="../images/reddit.png" alt="" class="circle")
-                span(class="title") #{feed.entryTitle}
-                p Submitted by : #{feed.entryAuthor}
-                a(href=feed.entryUrl class="secondary-content")
-                    i.material-icons trending_flat
+        if rFeed.length
+            each feed in rFeed
+                li(class="collection-item avatar" id="reddit-item")
+                    img(src="../images/reddit.png" alt="" class="circle")
+                    span(class="title") #{feed.entryTitle}
+                    p Submitted by : #{feed.entryAuthor}
+                    a(href=feed.entryUrl class="secondary-content")
+                        i.material-icons trending_flat
+        else
+            p Pas de post reddit pour cette recherche
 
-        each feed in tFeed
-            li(class="collection-item avatar")
-                img(src="../images/twit.png" alt="" class="circle")
-                span(class="title") #{feed.entryTitle}
-                p Submitted by #{feed.entryAuthor}
-                a(href="https://twitter.com/statuses/" + feed.entryUrl class="secondary-content")
-                    i.material-icons trending_flat
+        if tFeed.length
+            each feed in tFeed
+                li(class="collection-item avatar")
+                    img(src="../images/twit.png" alt="" class="circle")
+                    span(class="title") #{feed.entryTitle}
+                    p Submitted by #{feed.entryAuthor}
+                    a(href="https://twitter.com/statuses/" + feed.entryUrl class="secondary-content")
+                        i.material-icons trending_flat
+        else
+            p Pas de post twitter pour cette recherche
                 
 block creds
   div(class="row")
