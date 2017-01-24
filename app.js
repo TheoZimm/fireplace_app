@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* ROUTES */
 
 app.get('/', function (req, res) {
-    res.redirect('/search?q=csgo');
+    res.redirect('/search?q=csgo&count=5');
 });
 
 app.get('/search', function (req, res) {

@@ -11,6 +11,11 @@ block feed
     h2= message
     a(class="btn btn-primary sub" href="/") refresh
 
+  else if(statusCode == 503)
+    h1 There is a problem with the reddit API
+    h2= message
+    a(class="btn btn-primary sub" href="/") refresh
+
   else if (error.status == 500 && error[0].code == 32)
     h1 Verify your twitter credentials
     h2=error[0].code
