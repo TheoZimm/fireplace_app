@@ -1,5 +1,28 @@
 <h1 id="description-du-projet">Description du projet</h1>
-<h1 id="-">#</h1>
+<h2 id="but">But</h2>
+<ul>
+<li>Le but de ce projet est de proposer un fil d&#39;actualité personnalisable selon l&#39;utilisateur.
+Avec n&#39;importequelle mots-clés on peut trouver des résultats.</li>
+<li>Je l&#39;ai construit de sorte que l&#39;on puisse facilement rajouter d&#39;autres api de news comme 20 minutes par exemple.</li>
+<li>Pour le moment j&#39;ai construit la base avec deux wrapper de deux api connues : Reddit et Twitter.</li>
+<li>Par la suite on peut imaginer que l&#39;utilisateur aura plusieurs interaction de type /Post avec divers api comme ajouter un commentaire ou poster un &quot;post&quot; etc..</li>
+</ul>
+<h2 id="technologies-utilis-es">Technologies utilisées</h2>
+<p>le projet est constitué de plusieurs couches :</p>
+<ul>
+<li>NodeJS pour la base server-side </li>
+<li>ExpressJS qui est un framework minimaliste pour NodeJS</li>
+<li>PUGjs qui est un template engine pour NodeJS</li>
+<li>Un Wrapper &quot;snoowrap&quot; pour l&#39;api de reddit</li>
+<li>Un Wrapper &quot;twitter&quot; pour l&#39;api de twitter</li>
+</ul>
+<h2 id="fonctionnement">Fonctionnement</h2>
+<ul>
+<li>Un objet de type &quot;Entry&quot; d&#39;une api (exemple reddit) est crée dans un répertoire &quot;models&quot;, cet objet va contenir un titre, un url et un auteur.</li>
+<li>Un service du nom d&#39;une api (utilisant un wrapper) va contenir les credentials d&#39;un user et une/des requêtes spécifiques.</li>
+<li>La requête <code>Me()</code> du service va retourner le pseudonyme par rapport aux credentials données </li>
+<li>La requête <code>get()</code> du service va retourner un objet Entry remplit via le wrapper et la requête /search</li>
+</ul>
 <h1 id="installation-du-projet">Installation du projet</h1>
 <h2 id="pr-requis">Prérequis</h2>
 <pre><code>NodeJS version 6.9.1
@@ -21,15 +44,6 @@ Un compte twitter
 <li>à la racine du projet lancer un bash <code>npm start</code></li>
 </ul>
 <p>Le projet se lance par défault à l&#39;adresse localhost:3000</p>
-<h2 id="technologies-utilis-es">Technologies utilisées</h2>
-<p>le projet est constitué de plusieurs couches :</p>
-<ul>
-<li>NodeJS pour la base </li>
-<li>ExpressJS qui est un framework minimaliste pour NodeJS</li>
-<li>PUGjs qui est un template engine pour NodeJS</li>
-<li>Un Wrapper &quot;snoowrap&quot; pour l&#39;api de reddit</li>
-<li>Un Wrapper &quot;twitter&quot; pour l&#39;api de twitter</li>
-</ul>
 <h1 id="utilisation-du-projet">Utilisation du projet</h1>
 <ul>
 <li>Une fois vos credentials setup vous pouvez lancer l&#39;application sur localhost:3000</li>

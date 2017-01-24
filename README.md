@@ -1,5 +1,26 @@
 # Description du projet
-##
+## But
+- Le but de ce projet est de proposer un fil d'actualité personnalisable selon l'utilisateur.
+Avec n'importequelle mots-clés on peut trouver des résultats.
+- Je l'ai construit de sorte que l'on puisse facilement rajouter d'autres api de news comme 20 minutes par exemple.
+- Pour le moment j'ai construit la base avec deux wrapper de deux api connues : Reddit et Twitter.
+- Par la suite on peut imaginer que l'utilisateur aura plusieurs interaction de type /Post avec divers api comme ajouter un commentaire ou poster un "post" etc..
+
+
+## Technologies utilisées
+le projet est constitué de plusieurs couches :
+- NodeJS pour la base server-side 
+- ExpressJS qui est un framework minimaliste pour NodeJS
+- PUGjs qui est un template engine pour NodeJS
+- Un Wrapper "snoowrap" pour l'api de reddit
+- Un Wrapper "twitter" pour l'api de twitter
+
+## Fonctionnement
+- Un objet de type "Entry" d'une api (exemple reddit) est crée dans un répertoire "models", cet objet va contenir un titre, un url et un auteur.
+- Un service du nom d'une api (utilisant un wrapper) va contenir les credentials d'un user et une/des requêtes spécifiques.
+- La requête ```Me()``` du service va retourner le pseudonyme par rapport aux credentials données 
+- La requête ```get()``` du service va retourner un objet Entry remplit via le wrapper et la requête /search
+
 
 # Installation du projet
 ## Prérequis
@@ -23,13 +44,6 @@
 
 Le projet se lance par défault à l'adresse localhost:3000
 
-## Technologies utilisées
-le projet est constitué de plusieurs couches :
-- NodeJS pour la base 
-- ExpressJS qui est un framework minimaliste pour NodeJS
-- PUGjs qui est un template engine pour NodeJS
-- Un Wrapper "snoowrap" pour l'api de reddit
-- Un Wrapper "twitter" pour l'api de twitter
 
 # Utilisation du projet
 
