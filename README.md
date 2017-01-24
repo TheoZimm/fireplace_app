@@ -23,6 +23,7 @@ le projet est constitué de plusieurs couches :
 
 
 ### Problème restant
+- Contrairement à twitter reddit api ne retourne pas de valeur pour la variable de limite, celle ci est donc hardcodé pour le moment. Par conséquent le filtre "count" ne fonctionne que pour les posts de twitter
 
 # Installation du projet
 ## Prérequis
