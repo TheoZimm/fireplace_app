@@ -2,12 +2,33 @@ extends layout
 
 block feed
 
-  if (error.status == 500)
-      h1 Internal Error
-      h2= error.status
-      a(class="btn btn-primary sub" href="/") refresh
+  if(statusCode == 401)
+    h1 Verify your reddit credentials (Client secret or client id)
+    h2= message
+    a(class="btn btn-primary sub" href="/") refresh
+  else if(statusCode == 400)
+    h1 Verify your reddit credentials (refresh token)
+    h2= message
+    a(class="btn btn-primary sub" href="/") refresh
 
-  if (error.status == 404)
+  else if (error.status == 500 && error[0].code == 32)
+    h1 Verify your twitter credentials
+    h2=error[0].code
+    h2=error[0].message
+    a(class="btn btn-primary sub" href="/") refresh
+
+  else if (error.status == 500 && error[0].code == 89)
+    h1 Verify your twitter token (access token key)
+    h2=error[0].code
+    h2=error[0].message
+    a(class="btn btn-primary sub" href="/") refresh
+
+  else if (error.status == 500)
+    h1 Internal Error
+    h2= error.status
+    a(class="btn btn-primary sub" href="/") refresh
+
+  else if (error.status == 404)
       h1 your request doesn't exist
       h2= error.status
       a(class="btn btn-primary sub" href="/") refresh

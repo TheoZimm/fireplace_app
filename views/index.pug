@@ -6,8 +6,8 @@ block menu
                 div(class="input-field col s12" id="menu")
                     form(method='get' action='/search')
                         label
-                        input(id="search" name="q" type="text" value="" class="materialize-textarea")
-                        select(name="c" class="browser-default countselect")
+                        input(id="search" name="q" type="text" value=search class="materialize-textarea")
+                        select(id="count" name="count" class="browser-default countselect")
                             option(value="1") 1
                             option(value="5") 5
                             option(value="10") 10

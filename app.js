@@ -30,7 +30,11 @@ app.get('/', function (req, res) {
 app.get('/search', function (req, res) {
     console.log(req.query.q);
     let search = req.query.q;
-    let count = req.query.count || LIMIT;
+
+    let count = req.query.count;
+    console.log(req.query);
+    console.log(count);
+
 
     Promise.all([
         twitterService.me(),
@@ -40,20 +44,18 @@ app.get('/search', function (req, res) {
 
         // then assignate k -> v
     ]).then(([tUsername, rUsername, tFeed, rFeed]) => {
-        res.render('index',{ tUsername, rUsername, tFeed, rFeed, search });
+        res.render('index',{ tUsername, rUsername, tFeed, rFeed, search});
         // Catch error 500 and display the error page
     }).catch(err => {
-        if (err[0].code == 89){
-            err.status = 89;
-            res.locals.message = err[0].message;
-            res.locals.error = req.app.get('env') === 'development' ? err : {};
-            res.render('error');
-        } else {
+
         err.status = 500;
         res.locals.message = err.message;
+        res.locals.statusCode = err.statusCode;
+        console.log(err);
         res.locals.error = req.app.get('env') === 'development' ? err : {};
+
         res.render('error');
-        }
+
     });
 });
 
@@ -72,11 +74,13 @@ app.use(function(req, res, next) {
 
 // catch 500 and forward to error handler
 app.use(function(req, res, next) {
+
     const err = new Error("Erreur interne");
     err.status = 500;
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     res.render('error');
+
 });
 
 

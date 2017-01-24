@@ -23,7 +23,7 @@ class TwitterService {
     }
 
     /* Second request - get 5 post from the query  */
-    get(q, count=10) {
+    get(q, count) {
 
         return new Promise(function(resolve, reject) {
             twitterApi.get('search/tweets', {q, count}, function(error, tweets, response) {

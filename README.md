@@ -22,6 +22,8 @@ le projet est constitué de plusieurs couches :
 - La requête ```get()``` du service va retourner un objet Entry remplit via le wrapper et la requête /search
 
 
+### Problème restant
+
 # Installation du projet
 ## Prérequis
     NodeJS version 6.9.1
